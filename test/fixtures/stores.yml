@@ -4,8 +4,10 @@ one:
   domain: MyString
   purchasing_url: MyString
   price: 1
+  book: one
 
 two:
   domain: MyString
   purchasing_url: MyString
   price: 1
+  book: two
