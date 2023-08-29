@@ -19,6 +19,7 @@ class BookDashboard < Administrate::BaseDashboard
     tag_line: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    images: Field::ActiveStorage,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -61,6 +62,7 @@ class BookDashboard < Administrate::BaseDashboard
     stores
     summary
     tag_line
+    images
   ].freeze
 
   # COLLECTION_FILTERS
@@ -81,4 +83,8 @@ class BookDashboard < Administrate::BaseDashboard
   # def display_resource(book)
   #   "Book ##{book.id}"
   # end
+
+  def permitted_attributes(action = nil)
+    super + [:images => []]
+  end
 end

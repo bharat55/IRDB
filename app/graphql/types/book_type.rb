@@ -13,6 +13,7 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :reviews, [Types::ReviewType], null: false
     field :stores, [Types::StoreType], null: false
+    field :image_urls, [String], null: false
 
     def reviews
       object.reviews
@@ -20,6 +21,10 @@ module Types
 
     def stores
       object.stores
+    end
+
+    def image_urls
+      object.images.map{ _1.url }
     end
   end
 end

@@ -11,6 +11,7 @@ const GET_BOOKS = gql`
       tagLine
       category
       summary
+      imageUrls
     }
   }
 `;
